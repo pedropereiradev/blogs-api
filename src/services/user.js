@@ -28,7 +28,7 @@ const create = async ({ displayName, email, password, image }) => {
     return { error: { code: 409, message: 'User already registered' } };
   }
 
-  await User.create({ displayName, email, password, image });
+  await User.create({ displayName, password, email, image });
 
   return {};
 };
