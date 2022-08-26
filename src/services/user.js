@@ -39,8 +39,18 @@ const getAll = async () => User.findAll({
   },
 });
 
+const getById = async (id) => User.findOne({
+  where: {
+    id,
+  },
+  attributes: {
+    exclude: ['password'],
+  },
+});
+
 module.exports = {
   getUser,
   create,
   getAll,
+  getById,
 };
