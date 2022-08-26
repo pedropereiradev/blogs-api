@@ -7,4 +7,6 @@ const categoriesRoutes = express.Router();
 
 categoriesRoutes.post('/', userAuth.tokenValidation, categoryController.create);
 
+categoriesRoutes.get('/', userAuth.tokenValidation, categoryController.getAll);
+
 module.exports = categoriesRoutes;
