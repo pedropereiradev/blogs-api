@@ -72,6 +72,7 @@ const getAll = async () => BlogPost.findAll({
       {
         model: Category,
         as: 'categories',
+        through: { attributes: [] },
       },
     ],
   });
