@@ -60,6 +60,23 @@ const create = async ({ title, content, categoryIds, userEmail }) => {
   }
 };
 
+const getAll = async () => BlogPost.findAll({
+    include: [
+      {
+        model: User,
+        as: 'user',
+        attributes: {
+          exclude: ['password'],
+        },
+      },
+      {
+        model: Category,
+        as: 'categories',
+      },
+    ],
+  });
+
 module.exports = {
   create,
+  getAll,
 };

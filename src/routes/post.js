@@ -9,4 +9,6 @@ const postRoutes = express.Router();
 
 postRoutes.post('/', postValidation.validatePost, userAuth.tokenValidation, postController.create);
 
+postRoutes.get('/', userAuth.tokenValidation, postController.getAll);
+
 module.exports = postRoutes;
