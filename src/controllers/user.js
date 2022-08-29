@@ -54,8 +54,17 @@ const getById = async (req, res) => {
   }
 };
 
+const destroy = async (req, res) => {
+  const { userEmail } = req;
+
+  await userService.destroy(userEmail);
+
+  return res.status(204).end();
+};
+
 module.exports = {
   create,
   getAll,
   getById,
+  destroy,
 };

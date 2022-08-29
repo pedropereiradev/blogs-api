@@ -12,4 +12,6 @@ userRoutes.get('/', userAuth.tokenValidation, userController.getAll);
 
 userRoutes.get('/:id', userAuth.tokenValidation, userController.getById);
 
+userRoutes.delete('/me', userAuth.tokenValidation, userController.destroy);
+
 module.exports = userRoutes;
