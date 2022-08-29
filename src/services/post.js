@@ -1,14 +1,3 @@
-/*
-  RECEBE:
-    title
-    content
-    categoryIds
-  
-  - Checar se categoryIds existem
-  - descriptografar token p/ pegar id de usuario
-  - create em blogPost c/ userId, title e content
-  - create em postCategory c/ postID e categoryIds
-*/
 const Sequelize = require('sequelize');
 const config = require('../database/config/config');
 const { BlogPost, Category, User, PostCategory } = require('../database/models');
