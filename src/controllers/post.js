@@ -69,10 +69,23 @@ const destroy = async (req, res) => {
   }
 };
 
+const getByQuery = async (req, res) => {
+  try {
+    const { q } = req.query;
+
+    const result = await postService.getByQuery(q);
+
+    return res.status(200).json(result);
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
   destroy,
+  getByQuery,
 };

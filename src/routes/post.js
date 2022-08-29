@@ -9,6 +9,8 @@ const postRoutes = express.Router();
 
 postRoutes.post('/', postValidation.validatePost, userAuth.tokenValidation, postController.create);
 
+postRoutes.get('/search', userAuth.tokenValidation, postController.getByQuery);
+
 postRoutes.get('/:id', userAuth.tokenValidation, postController.getById);
 
 postRoutes.get('/', userAuth.tokenValidation, postController.getAll);
