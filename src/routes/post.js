@@ -15,4 +15,6 @@ postRoutes.get('/', userAuth.tokenValidation, postController.getAll);
 
 postRoutes.put('/:id', postValidation.validatePut, userAuth.tokenValidation, postController.update);
 
+postRoutes.delete('/:id', userAuth.tokenValidation, postController.destroy);
+
 module.exports = postRoutes;
